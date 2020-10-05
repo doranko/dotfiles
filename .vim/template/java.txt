@@ -1,0 +1,9 @@
+/** Class Name
+ *
+ * @author AZUMA Ginji
+ */
+
+public class /* class name */ {
+    public static void main(String[] args) {
+    } // end of "main"
+} // end of class

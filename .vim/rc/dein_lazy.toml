@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']

@@ -10,13 +10,15 @@ Vim 8.1 ～ がインストール済み
 
 # 導入 (Mac)
 
-※未検証です
 1. `cd ~`
 2. `git clone https://github.com/doranko/dotfiles.git`
-3. sh dotfilesLink.sh
+3. `cd dotfiles/`
+4. `sh dotfilesLink.sh`
 
 # 初回起動時
 
 プラグインがインストールされます。
+
 Windows の場合はまずコマンドプロンプトが表示され、Vim から 1 度目のポップアップが表示されます。
+
 その後、しばらくして 2 度目のポップアップが表示されたらインストール終了です。

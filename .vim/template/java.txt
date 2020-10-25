@@ -4,6 +4,6 @@
  */
 
 public class /* class name */ {
-    public static void main(String[] args) {
-    } // end of "main"
+	public static void main(String[] args) {
+	} // end of "main"
 } // end of class

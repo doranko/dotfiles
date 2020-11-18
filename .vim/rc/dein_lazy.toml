@@ -5,3 +5,11 @@ on_ft = ['rust']
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
+
+[[plugins]]
+repo = 'previm/previm'
+on_ft = ['markdown']
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_ft = ['markdown']

@@ -86,12 +86,15 @@ set noundofile "undoファイル出力無効
 set viminfo+=n$HOME/.vim/.viminfo
 
 "### テンプレート挿入設定 ###
-autocmd BufNewFile *.py 0r $HOME/.vim/template/python.txt
-autocmd BufNewFile *.c 0r $HOME/.vim/template/c.txt
-autocmd BufNewFile *.cpp 0r $HOME/.vim/template/c++.txt
-autocmd BufNewFile *.java 0r $HOME/.vim/template/java.txt
-autocmd BufNewFile *.stan 0r $HOME/.vim/template/stan.txt
-autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
+augroup insertTemplate
+	autocmd!
+	autocmd BufNewFile *.py 0r $HOME/.vim/template/python.txt
+	autocmd BufNewFile *.c 0r $HOME/.vim/template/c.txt
+	autocmd BufNewFile *.cpp 0r $HOME/.vim/template/c++.txt
+	autocmd BufNewFile *.java 0r $HOME/.vim/template/java.txt
+	autocmd BufNewFile *.stan 0r $HOME/.vim/template/stan.txt
+	autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
+augroup END
 
 "### dein.vim
 "プラグインが実際にインストールされるディレクトリ
@@ -137,3 +140,9 @@ command! ReplaceOpenedCallHierarchyByEclipse source $HOME/.vim/myScript/ReplaceO
 
 "ファイルタイプ関連を有効化
 filetype plugin indent on
+
+"ファイルタイプに因ってはインデントの設定を変更
+augroup fileTypeIndent
+	autocmd!
+	autocmd BufNewFile,BufRead *.rs setlocal expandtab
+augroup END

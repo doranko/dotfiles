@@ -1,3 +1,11 @@
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = 'nnoremap <silent><C-e> :NERDTreeToggle<CR>'
+
+[[plugins]]
+repo = 'tyru/operator-camelize.vim'
+depends = ['vim-operator-user']
+hook_add = 'map <leader>c <plug>(operator-camelize-toggle)'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'

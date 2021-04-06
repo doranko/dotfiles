@@ -47,6 +47,7 @@ set showbreak=-         "折り返し部分の初めに '-' を挿入する
 "set foldmethod=marker   "明示的に '{{{' と '}}}' で囲んだ範囲を畳み込み
 "set foldmethod=syntax   "構文で折りたたむ
 set pumheight=10        "'c-p' で表示される補完メニューの高さ
+set scrolloff=3         "カーソル行の上下に指定した行数を確保して表示
 
 "### HTML のインデント設定 ###
 let g:html_indent_script1="inc" "<script> の最初の行を自動インデント

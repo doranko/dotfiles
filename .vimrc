@@ -30,10 +30,10 @@ set showmatch           "括弧入力時の対応する括弧を表示
 set matchtime=2         "対応する括弧の表示時間
 colorscheme ron         "カラースキーマの設定
 syntax on               "コードの色分け
-"set expandtab           "tabを半角スペースで挿入
+set noexpandtab         "tab でタブ文字を挿入
 set tabstop=4           "インデントの幅を設定
 set shiftwidth=4        "オートインデントの幅
-set cindent             "C 言語向けオートインデント
+set smartindent         "オートインデント
 "set cinoptions+=:0      "cindent のオプション
 "set autoindent          "直前の行と同じインデントを自動設定
 set nrformats-=octal    "0で始まる数値を8進数として扱わないようにする
@@ -44,10 +44,9 @@ set tw=0                "自動改行 off
 "set virtualedit=onemore "行末の1文字先までカーソル移動を可能にする
 "set nowrap              "折り返し表示を無効化
 set showbreak=-         "折り返し部分の初めに '-' を挿入する
-"set foldmethod=marker   "明示的に '{{{' と '}}}' で囲んだ範囲を畳み込み
-"set foldmethod=syntax   "構文で折りたたむ
 set pumheight=10        "'c-p' で表示される補完メニューの高さ
 set scrolloff=3         "カーソル行の上下に指定した行数を確保して表示
+set foldcolumn=1        "折り畳み場所の表示領域をウィンドウ左に確保
 
 "### HTML のインデント設定 ###
 let g:html_indent_script1="inc" "<script> の最初の行を自動インデント
@@ -142,8 +141,7 @@ command! ReplaceOpenedCallHierarchyByEclipse source $HOME/.vim/myScript/ReplaceO
 "ファイルタイプ関連を有効化
 filetype plugin indent on
 
-"ファイルタイプに因ってはインデントの設定を変更
-augroup fileTypeIndent
+augroup foldOpen
 	autocmd!
-	autocmd BufNewFile,BufRead *.rs setlocal expandtab
+	autocmd BufNewFile,BufRead * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 augroup END

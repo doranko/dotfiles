@@ -17,3 +17,7 @@ on_ft = ['markdown']
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 on_ft = ['markdown']
+
+[[plugins]]
+repo = 'mattn/vim-maketable'
+on_ft = ['markdown']

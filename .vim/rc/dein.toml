@@ -9,3 +9,7 @@ hook_add = 'map <leader>c <plug>(operator-camelize-toggle)'
 
 [[plugins]]
 repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+hook_add = 'set helplang=ja'

@@ -16,9 +16,6 @@ set belloff=all
 "改行コード設定
 set fileformats=unix,dos
 
-"ヘルプの言語の優先順位設定
-set helplang=ja,en
-
 "### 表示設定 ###
 set number              "行番号を表示
 "set relativenumber      "行番号の相対表示
@@ -125,12 +122,6 @@ endif
 "未インストールのものをインストール
 if dein#check_install()
 	call dein#install()
-endif
-"非使用プラグインのアンインストール
-let s:removed_plugins = dein#check_clean()
-if len(s:removed_plugins) > 0
-	call map(s:removed_plugins, "delete(v:val, 'rf')")
-	call dein#recache_runtimepath()
 endif
 
 "### キーマッピング

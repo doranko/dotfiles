@@ -126,7 +126,12 @@ endif
 if dein#check_install()
 	call dein#install()
 endif
-
+"非使用プラグインのアンインストール
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+	call map(s:removed_plugins, "delete(v:val, 'rf')")
+	call dein#recache_runtimepath()
+endif
 
 "### キーマッピング
 "<F4> を押すたびに行番号の絶対表示と相対表示を切り替え

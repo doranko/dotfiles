@@ -1,5 +1,5 @@
 if has('win32') || has('win64')
-	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
 
 "ファイルタイプ関連を無効化
@@ -18,28 +18,22 @@ set fileformats=unix,dos
 
 "### 表示設定 ###
 set number              "行番号を表示
-"set relativenumber      "行番号の相対表示
-"set cursorline          "現在の行を強調表示 (gvimrc で設定)
-"set cursorcolumn        "現在の列を強調表示
+set cursorline          "現在の行を強調表示
 set title               "編集中のファイル名を表示
 set ambiwidth=double    "全角文字の幅を 2 に固定
 set showmatch           "括弧入力時の対応する括弧を表示
 set matchtime=2         "対応する括弧の表示時間
 colorscheme ron         "カラースキーマの設定
 syntax on               "コードの色分け
-set noexpandtab         "tab でタブ文字を挿入
+set expandtab           "tab で空白文字を挿入
 set tabstop=4           "インデントの幅を設定
 set shiftwidth=4        "オートインデントの幅
 set smartindent         "オートインデント
-"set cinoptions+=:0      "cindent のオプション
-"set autoindent          "直前の行と同じインデントを自動設定
 set nrformats-=octal    "0で始まる数値を8進数として扱わないようにする
 set list                "Tab と 改行文字 を可視化
 set listchars=tab:^\    "Tab を可視化するときに '^ ' として表示
 hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE guifg=#5f5f5f
 set tw=0                "自動改行 off
-"set virtualedit=onemore "行末の1文字先までカーソル移動を可能にする
-"set nowrap              "折り返し表示を無効化
 set showbreak=-         "折り返し部分の初めに '-' を挿入する
 set pumheight=10        "'c-p' で表示される補完メニューの高さ
 set scrolloff=3         "カーソル行の上下に指定した行数を確保して表示
@@ -76,21 +70,19 @@ set diffopt=vertical
 "### バックアップ設定 ###
 set nobackup  "バックアップ出力無効
 set noundofile "undoファイル出力無効
-"set backup                 "バックアップを作成する
-"set backupdir=$HOME/backup "バックアップファイルを作成するフォルダを指定
 
 "### viminfo ファイル設定 ###
 set viminfo+=n$HOME/.vim/.viminfo
 
 "### テンプレート挿入設定 ###
 augroup insertTemplate
-	autocmd!
-	autocmd BufNewFile *.py 0r $HOME/.vim/template/python.txt
-	autocmd BufNewFile *.c 0r $HOME/.vim/template/c.txt
-	autocmd BufNewFile *.cpp 0r $HOME/.vim/template/c++.txt
-	autocmd BufNewFile *.java 0r $HOME/.vim/template/java.txt
-	autocmd BufNewFile *.stan 0r $HOME/.vim/template/stan.txt
-	autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
+    autocmd!
+    autocmd BufNewFile *.py 0r $HOME/.vim/template/python.txt
+    autocmd BufNewFile *.c 0r $HOME/.vim/template/c.txt
+    autocmd BufNewFile *.cpp 0r $HOME/.vim/template/c++.txt
+    autocmd BufNewFile *.java 0r $HOME/.vim/template/java.txt
+    autocmd BufNewFile *.stan 0r $HOME/.vim/template/stan.txt
+    autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
 augroup END
 
 "### dein.vim
@@ -100,28 +92,28 @@ let s:dein_dir = expand('~/dotfiles/.vim/dein')
 "dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if &runtimepath !~# '/dein.vim'
-	if !isdirectory(s:dein_repo_dir)
-		execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-	endif
-	execute 'set runtimepath^=' . s:dein_repo_dir
+    if !isdirectory(s:dein_repo_dir)
+        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    endif
+    execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 "設定開始
 if dein#load_state(s:dein_dir)
-	call dein#begin(s:dein_dir)
-	"プライグインリストを収めた TOML ファイル
-	let g:rc_dir    = expand('~/.vim/rc')
-	let s:toml      = g:rc_dir . '/dein.toml'
-	let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
-	"TOML を読み込み、キャッシュしておく
-	call dein#load_toml(s:toml,      {'lazy': 0})
-	call dein#load_toml(s:lazy_toml, {'lazy': 1})
-	"設定終了
-	call dein#end()
-	call dein#save_state()
+    call dein#begin(s:dein_dir)
+    "プライグインリストを収めた TOML ファイル
+    let g:rc_dir    = expand('~/.vim/rc')
+    let s:toml      = g:rc_dir . '/dein.toml'
+    let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+    "TOML を読み込み、キャッシュしておく
+    call dein#load_toml(s:toml,      {'lazy': 0})
+    call dein#load_toml(s:lazy_toml, {'lazy': 1})
+    "設定終了
+    call dein#end()
+    call dein#save_state()
 endif
 "未インストールのものをインストール
 if dein#check_install()
-	call dein#install()
+    call dein#install()
 endif
 
 "### キーマッピング
@@ -138,6 +130,6 @@ command! ReplaceOpenedCallHierarchyByEclipse source $HOME/.vim/myScript/ReplaceO
 filetype plugin indent on
 
 augroup foldOpen
-	autocmd!
-	autocmd BufNewFile,BufRead * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
+    autocmd!
+    autocmd BufNewFile,BufRead * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 augroup END

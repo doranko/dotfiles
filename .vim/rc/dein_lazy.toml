@@ -1,4 +1,4 @@
-[[plugins]]
+[[plugins]] # Rust 開発用
 repo = 'rust-lang/rust.vim'
 on_ft = ['rust']
 hook_source = '''
@@ -6,11 +6,11 @@ hook_source = '''
 	let g:rustfmt_autosave = 1
 '''
 
-[[plugins]]
+[[plugins]] # Go 開発用
 repo = 'fatih/vim-go'
 on_ft = ['go']
 
-[[plugins]]
+[[plugins]] # :PrevimOpen でマークダウンをプレビュー
 repo = 'previm/previm'
 on_ft = ['markdown']
 
@@ -18,6 +18,6 @@ on_ft = ['markdown']
 repo = 'tyru/open-browser.vim'
 on_ft = ['markdown']
 
-[[plugins]]
+[[plugins]] # :MakeTable でカンマ区切りをテーブルに変換
 repo = 'mattn/vim-maketable'
 on_ft = ['markdown']

@@ -1,0 +1,15 @@
+[[plugins]] # ディレクトリツリーの表示
+repo = 'scrooloose/nerdtree'
+hook_add = 'nnoremap <silent><C-e> :NERDTreeToggle<CR>'
+
+[[plugins]] # "\c" で スネークケース <-> キャメルケース を変換
+repo = 'tyru/operator-camelize.vim'
+depends = ['vim-operator-user']
+hook_add = 'map <leader>c <plug>(operator-camelize-toggle)'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]] # help の日本語化
+repo = 'vim-jp/vimdoc-ja'
+hook_add = 'set helplang=ja'

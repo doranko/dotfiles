@@ -28,3 +28,9 @@ Windows の場合はまずコマンドプロンプトが表示され、Vim か�
 プラグインのインストール場所は `~/dotfiles/.vim/dein` となっています。
 
 別の場所にインストールしたい場合は .vimrc の該当箇所を適宜書き換えてください。
+
+> ライブラリ lua53.dll をロードできませんでした
+
+のエラーが表示される場合は下記 URL より LuaBinaries 5.3.6 をダウンロードし、パスを通してください。
+- http://luabinaries.sourceforge.net/download.html
+- e.g. Windows で Vim (32 bit) を使用している場合は lua-5.3.6\_Win32\_dllw6\_lib.zip をダウンロード

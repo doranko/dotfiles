@@ -13,3 +13,15 @@ repo = 'kana/vim-operator-user'
 [[plugins]] # help の日本語化
 repo = 'vim-jp/vimdoc-ja'
 hook_add = 'set helplang=ja'
+
+[[plugins]] # vim 上で非同期シェルを実行
+repo = 'Shougo/vimshell.vim'
+depends = ['vimproc']
+hook_add = 'nnoremap vsh :vertical botright terminal<CR>'
+hook_source = '''
+    let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
+    let g:vimshell_prompt =  '$ '
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc'

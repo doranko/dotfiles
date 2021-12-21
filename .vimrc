@@ -39,6 +39,8 @@ set pumheight=10        "'c-p' で表示される補完メニューの高さ
 set scrolloff=3         "カーソル行の上下に指定した行数を確保して表示
 set foldcolumn=1        "折り畳み場所の表示領域をウィンドウ左に確保
 
+set splitbelow "新しいウィンドウを開く際、下に開く
+
 "### HTML のインデント設定 ###
 let g:html_indent_script1="inc" "<script> の最初の行を自動インデント
 let g:html_indent_style1="inc"  "<style> の最初の行を自動インデント

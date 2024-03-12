@@ -124,10 +124,6 @@ nnoremap <F4> :<C-u>setlocal relativenumber!<CR>
 "ハイライト削除
 nnoremap <F3> :noh<CR>
 
-"### 独自 Ex コマンド定義
-"Eclipse で「呼び出し階層を開く」を実行し、「展開された階層をコピー」した結果を整形する
-command! ReplaceOpenedCallHierarchyByEclipse source $HOME/.vim/myScript/ReplaceOpenedCallHierarchyByEclipse.vim
-
 "ファイルタイプ関連を有効化
 filetype plugin indent on
 

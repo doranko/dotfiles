@@ -25,6 +25,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'Shougo/vimproc'
+build = 'make'
 
 [[plugins]] # :QuickRun でバッファ内のコードを実行
 repo = 'thinca/vim-quickrun'

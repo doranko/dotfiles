@@ -117,6 +117,9 @@ endif
 if dein#check_install()
     call dein#install()
 endif
+"TOML ファイルから削除されているプラグインを削除
+call map(dein#check_clean(), "delete(v:val, 'rf')")
+call dein#recache_runtimepath()
 
 "### キーマッピング
 "<F4> を押すたびに行番号の絶対表示と相対表示を切り替え

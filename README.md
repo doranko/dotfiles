@@ -4,9 +4,8 @@ Vim 8.1 ～ がインストール済み
 
 # 導入 (Windows)
 
-1. `cd %HOMEPATH%`
-2. `git clone https://github.com/doranko/dotfiles.git`
-3. run_mklink を実行 (mklink.bat を管理者権限で実行)
+1. `%HOMEPATH%` 直下にリポジトリを clone
+2. mklink.bat を管理者権限で実行
 
 # 導入 (Mac)
 
